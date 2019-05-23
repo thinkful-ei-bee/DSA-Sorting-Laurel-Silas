@@ -106,6 +106,26 @@ function bucketSort(arr, min, max) {
 //   return arr;
 // }
 
-console.log(bucketSort(arr, 24, 89));
+//console.log(bucketSort(arr, 24, 89));
 
 // 6.
+/*
+[89, 30, 25, 32, 72, 70, 51, 42, 25, 24]
+
+input: array, randomize
+output: randomized array
+*/
+
+function randomArray(arr) {
+  for (let i = arr.length - 1; i > 1; i--) {
+    //console.log("i am i", i);
+    const j = Math.floor(Math.random() * (i + 1))
+    //console.log("i am j", j);
+    // [arr[i], arr[j]] = [arr[j], arr[i]]
+    swap(arr, i, j);
+  }
+  return arr;
+}
+
+console.log(randomArray(arr));
+
