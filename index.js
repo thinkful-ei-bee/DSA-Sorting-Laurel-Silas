@@ -127,5 +127,12 @@ function randomArray(arr) {
   return arr;
 }
 
-console.log(randomArray(arr));
+//console.log(randomArray(arr));
 
+
+// 7.
+function sortingBooks(array) {
+  const alphaArray = ['alpha', 'elephant', 'cat', 'boy', 'dog', 'hat', 'foot', 'igloo', 'giraffe'];
+    console.log(merge(alphaArray));
+}
+sortingBooks();
