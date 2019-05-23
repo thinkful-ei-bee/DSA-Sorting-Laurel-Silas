@@ -36,6 +36,11 @@ b.
  */
 
 // 3.
+function swap(array, i, j) {
+  const tmp = array[i];
+  array[i] = array[j];
+  array[j] = tmp;
+}
 
 const quickSort = require('./QuickSort');
 
@@ -44,7 +49,7 @@ const arr = [89, 30, 25, 32, 72, 70, 51, 42, 25, 24];
 
 // 4.
 const merge = require('./MergeSort');
-console.log(merge(arr));
+//console.log(merge(arr));
 
 // 5.
 /*
@@ -55,7 +60,52 @@ console.log(merge(arr));
 input: array, highest num, lowest num
 output: sorted array
 
-for (let i in array) {
-  
-}
  */
+
+function bucketSort(arr, min, max) {
+  let buckets = [];
+  let sortedOutput = [];
+  for (let i = min - 1; i < max; i++) {
+    buckets.push( [] );
+  }
+  //console.log(buckets);
+
+  for (let i in arr) {
+    buckets[arr[i] - min].push(arr[i]);
+  }
+  //console.log(buckets);
+  for (let i in buckets) {
+    for (let j in buckets[i]) {
+      if (buckets[i]) {
+        sortedOutput.push(buckets[i][j]);
+      }
+    }
+  }
+  return sortedOutput;
+}
+
+// function bucketSort(arr, min, max) {
+
+//   const array = [];
+//   let i = 0;
+//   let j = arr.length - 1;
+  
+//   while (i < j) {
+//     console.log('while 1');
+//     while (arr[j] > arr[i]) {
+//       console.log('while 2');
+//       i++;
+//       j--;
+//     }
+//     if (arr[i] > arr[j]) {
+//       swap(arr, i, j);
+//     }
+//     j--;
+//     i++;
+//   }
+//   return arr;
+// }
+
+console.log(bucketSort(arr, 24, 89));
+
+// 6.
